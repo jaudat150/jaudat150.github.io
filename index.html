@@ -1,0 +1,876 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>Jawdat Faisal Al-Hussein — Software Engineer | Backend, Data & ML</title>
+  <meta name="description" content="Portfolio of Jawdat Faisal Al-Hussein: backend engineering, data systems, machine learning, reproducible research, and full-stack software." />
+  <meta name="author" content="Jawdat Faisal Al-Hussein">
+  <link rel="canonical" href="https://jaudat150.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jawdat Faisal Al-Hussein — Software Engineer">
+  <meta property="og:description" content="I design, build, test, and ship software systems — from data pipelines and APIs to machine-learning experiments.">
+  <meta property="og:url" content="https://jaudat150.github.io/">
+  <meta name="twitter:card" content="summary">
+  <meta name="theme-color" content="#0b1015">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b1015'/%3E%3Cpath d='M15 42 28 18l8 15 13-15' fill='none' stroke='%237ce7c4' stroke-width='5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Jawdat Faisal Al-Hussein",
+    "jobTitle":"Software Engineer — Backend, Data & Machine Learning",
+    "email":"jaudatalhusein@gmail.com",
+    "url":"https://jaudat150.github.io/",
+    "alumniOf":{"@type":"CollegeOrUniversity","name":"Antioch Private University"},
+    "sameAs":["https://github.com/jaudat150","https://www.linkedin.com/in/jaudat-faisal-al-husein"]
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #0b1015;
+      --bg-soft: #0e151c;
+      --panel: #111a22;
+      --panel-2: #16212b;
+      --panel-3: #1b2934;
+      --text: #edf4f5;
+      --muted: #9baeb5;
+      --faint: #6d828a;
+      --line: rgba(184, 211, 215, .13);
+      --accent: #7ce7c4;
+      --accent-2: #9aa7ff;
+      --accent-ink: #08231c;
+      --warm: #f1c98b;
+      --danger: #ff9a9a;
+      --shadow: 0 24px 80px rgba(0,0,0,.28);
+      --radius: 20px;
+      --radius-sm: 13px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --max: 1180px;
+    }
+    [data-theme="light"] {
+      --bg: #f5f8f7;
+      --bg-soft: #eef3f1;
+      --panel: #ffffff;
+      --panel-2: #f4f8f6;
+      --panel-3: #eaf1ee;
+      --text: #122126;
+      --muted: #4b626a;
+      --faint: #73868b;
+      --line: rgba(19, 49, 56, .13);
+      --accent: #087c63;
+      --accent-2: #5d69cf;
+      --accent-ink: #ffffff;
+      --warm: #98631d;
+      --danger: #b33c3c;
+      --shadow: 0 24px 80px rgba(20,49,48,.10);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 92px; }
+    body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+    body::before { content: ""; position: fixed; inset: 0; z-index: -2; pointer-events: none; background-image: linear-gradient(rgba(145,180,180,.035) 1px, transparent 1px), linear-gradient(90deg, rgba(145,180,180,.035) 1px, transparent 1px); background-size: 46px 46px; mask-image: linear-gradient(to bottom, black, transparent 78%); }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { color: inherit; }
+    ::selection { background: var(--accent); color: var(--accent-ink); }
+    :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+    .progress { position: fixed; inset: 0 auto auto 0; height: 3px; width: 0; background: linear-gradient(90deg,var(--accent),var(--accent-2)); z-index: 100; }
+    .wrap { width: min(var(--max), calc(100% - 44px)); margin-inline: auto; }
+    .skip { position: absolute; left: -9999px; top: 8px; z-index: 999; background: var(--accent); color: var(--accent-ink); padding: 10px 14px; border-radius: 9px; }
+    .skip:focus { left: 12px; }
+    .topbar { position: sticky; top: 0; z-index: 80; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(18px); }
+    .nav { height: 72px; display: flex; align-items: center; gap: 22px; }
+    .brand { display: inline-flex; align-items: center; gap: 11px; font-family: var(--mono); font-size: 14px; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
+    .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid color-mix(in srgb, var(--accent) 45%, var(--line)); border-radius: 10px; color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--panel)); font-size: 13px; }
+    .brand .dot { color: var(--accent); }
+    .navlinks { display: flex; align-items: center; gap: clamp(12px,2vw,24px); margin-left: auto; }
+    .navlinks a { color: var(--muted); font-size: 12px; font-weight: 650; transition: color .2s ease; }
+    .navlinks a:hover, .navlinks a.active { color: var(--text); }
+    .nav-actions { display: flex; gap: 8px; align-items: center; }
+    .icon-btn, .menu-btn { width: 38px; height: 38px; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 11px; background: var(--panel); color: var(--muted); cursor: pointer; }
+    .icon-btn:hover, .menu-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .menu-btn { display: none; }
+    .hero { position: relative; padding: 94px 0 64px; overflow: hidden; }
+    .hero::after { content: ""; position: absolute; width: 520px; height: 520px; right: -170px; top: -210px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--accent-2) 17%, transparent), transparent 68%); pointer-events: none; z-index: -1; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0,1.12fr) minmax(340px,.88fr); gap: clamp(34px,6vw,76px); align-items: center; }
+    .eyebrow, .kicker { display: flex; align-items: center; gap: 10px; color: var(--accent); font-family: var(--mono); font-size: 11px; letter-spacing: .13em; text-transform: uppercase; font-weight: 700; }
+    .pulse { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 5px color-mix(in srgb,var(--accent) 13%,transparent); }
+    h1 { max-width: 760px; font-size: clamp(42px,6vw,76px); line-height: 1.025; letter-spacing: -.065em; margin: 21px 0 22px; font-weight: 790; }
+    h1 .gradient { color: transparent; background: linear-gradient(100deg,var(--accent),#a5d9ec 55%,var(--accent-2)); background-clip: text; -webkit-background-clip: text; }
+    .intro { color: var(--muted); font-size: clamp(16px,1.6vw,18px); max-width: 660px; margin: 0; }
+    .intro strong { color: var(--text); font-weight: 650; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 1px solid var(--line); border-radius: 11px; padding: 11px 16px; background: var(--panel); color: var(--text); font-size: 13px; font-weight: 700; transition: transform .2s ease,border-color .2s ease,background .2s ease; cursor: pointer; }
+    .btn:hover { transform: translateY(-2px); border-color: var(--accent); text-decoration: none; }
+    .btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+    .btn.primary:hover { filter: brightness(1.04); }
+    .btn.ghost { background: transparent; }
+    .microline { margin-top: 25px; display: flex; flex-wrap: wrap; gap: 16px; color: var(--faint); font-family: var(--mono); font-size: 10px; letter-spacing: .04em; }
+    .microline span { display: inline-flex; align-items: center; gap: 7px; }
+    .microline i { width: 4px; height: 4px; background: var(--accent); border-radius: 50%; }
+    .workbench { position: relative; border: 1px solid var(--line); border-radius: 22px; background: linear-gradient(155deg,color-mix(in srgb,var(--panel) 96%,var(--accent-2)),var(--panel)); box-shadow: var(--shadow); overflow: hidden; transform: perspective(1000px) rotateY(-3deg) rotateX(1deg); }
+    .workbench::before { content: ""; position: absolute; width: 250px; height: 250px; right: -100px; bottom: -130px; background: radial-gradient(circle,color-mix(in srgb,var(--accent) 15%,transparent),transparent 68%); }
+    .wb-head { display: flex; align-items: center; gap: 7px; padding: 14px 17px; border-bottom: 1px solid var(--line); color: var(--faint); font-family: var(--mono); font-size: 10px; }
+    .window-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--faint); opacity: .65; }
+    .wb-head .file { margin-left: auto; }
+    .wb-content { padding: 22px; position: relative; }
+    .code-label { color: var(--faint); font-family: var(--mono); font-size: 10px; margin-bottom: 9px; }
+    .code-line { display: flex; gap: 14px; padding: 4px 0; font: 12px/1.7 var(--mono); color: var(--muted); white-space: nowrap; }
+    .ln { width: 16px; text-align: right; color: var(--faint); opacity: .6; }
+    .kw { color: var(--accent-2); }.fn { color: var(--accent); }.str { color: var(--warm); }.comment { color: var(--faint); }
+    .pipeline { margin-top: 22px; border-top: 1px solid var(--line); padding-top: 17px; }
+    .pipeline-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 11px; color: var(--muted); font-size: 10px; font-family: var(--mono); text-transform: uppercase; letter-spacing: .09em; }
+    .pipeline-title b { color: var(--accent); font-weight: 600; }
+    .pipeline-steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 6px; }
+    .pipe-step { min-width: 0; padding: 10px 7px; text-align: center; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; }
+    .pipe-step strong { display: block; font-size: 10px; color: var(--text); }
+    .pipe-step small { display: block; color: var(--faint); font: 9px var(--mono); margin-top: 3px; }
+    .pipe-arrow { height: 1px; margin: 8px 15px 0; background: linear-gradient(90deg,var(--accent),var(--accent-2)); opacity: .65; }
+    .wb-foot { display: flex; justify-content: space-between; gap: 10px; padding: 12px 18px; border-top: 1px solid var(--line); color: var(--faint); font: 9px var(--mono); }
+    .wb-foot .ok { color: var(--accent); }
+    .proof { display: grid; grid-template-columns: repeat(4,1fr); gap: 10px; margin-top: 45px; }
+    .proof-item { padding: 17px 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; }
+    .proof-item b { display: block; color: var(--accent); font: 700 clamp(21px,2.5vw,29px)/1.1 var(--mono); letter-spacing: -.06em; }
+    .proof-item span { display: block; color: var(--muted); font-size: 11px; margin-top: 7px; }
+    section { padding: 82px 0; border-top: 1px solid var(--line); }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 25px; margin-bottom: 30px; }
+    .section-title { margin: 8px 0 0; font-size: clamp(28px,3.7vw,42px); line-height: 1.12; letter-spacing: -.045em; }
+    .section-copy { color: var(--muted); max-width: 590px; font-size: 14px; margin: 12px 0 0; }
+    .section-aside { flex: 0 0 auto; color: var(--faint); font: 10px var(--mono); text-align: right; }
+    .feature-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 15px; }
+    .project { position: relative; display: flex; flex-direction: column; min-height: 300px; padding: 23px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .22s ease,border-color .22s ease,box-shadow .22s ease; }
+    .project:hover { transform: translateY(-4px); border-color: color-mix(in srgb,var(--accent) 48%,var(--line)); box-shadow: var(--shadow); }
+    .project.featured { grid-column: span 2; min-height: auto; }
+    .project-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .project-type { display: inline-flex; align-items: center; gap: 7px; color: var(--accent); font: 10px var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+    .project-type::before { content: ""; width: 6px; height: 6px; border-radius: 2px; background: var(--accent); }
+    .project-state { padding: 5px 8px; border-radius: 7px; border: 1px solid var(--line); color: var(--faint); font: 9px var(--mono); text-transform: uppercase; }
+    .project h3 { font-size: clamp(20px,2.4vw,27px); line-height: 1.2; letter-spacing: -.04em; margin: 18px 0 10px; }
+    .project p { color: var(--muted); font-size: 13.5px; margin: 0; max-width: 78ch; }
+    .project.featured .project-layout { display: grid; grid-template-columns: minmax(0,1.25fr) minmax(250px,.75fr); gap: 28px; align-items: center; }
+    .project.featured .project h3 { font-size: 30px; }
+    .metric-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 19px 0; }
+    .metric { padding: 8px 10px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel-2); }
+    .metric b { display: block; font: 700 16px var(--mono); color: var(--text); }
+    .metric small { display: block; color: var(--faint); font-size: 9px; margin-top: 2px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; padding-top: 18px; }
+    .tag { color: var(--muted); font: 10px var(--mono); padding: 5px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel-2); }
+    .project-links { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; margin-top: 17px; }
+    .text-link { border: 0; background: none; padding: 0; display: inline-flex; gap: 7px; align-items: center; color: var(--accent); font-size: 12px; font-weight: 750; cursor: pointer; }
+    .text-link:hover { text-decoration: underline; }
+    .architecture-mini { padding: 17px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg-soft); }
+    .arch-caption { color: var(--faint); font: 9px var(--mono); text-transform: uppercase; letter-spacing: .11em; }
+    .arch-stack { display: grid; gap: 7px; margin-top: 12px; }
+    .arch-node { position: relative; padding: 9px 12px; border-radius: 8px; background: var(--panel-2); border: 1px solid var(--line); display: flex; align-items: center; justify-content: space-between; gap: 9px; font-size: 10px; }
+    .arch-node:not(:last-child)::after { content: "↓"; position: absolute; left: 50%; bottom: -15px; color: var(--accent); z-index: 1; font: 11px var(--mono); }
+    .arch-node strong { font-weight: 650; }.arch-node span { color: var(--faint); font: 9px var(--mono); }
+    .arch-node.active { border-color: color-mix(in srgb,var(--accent) 50%,var(--line)); }
+    .split-card { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 15px; }
+    .subproject { padding: 21px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+    .subproject h3 { font-size: 18px; margin: 0 0 8px; letter-spacing: -.03em; }
+    .subproject p { color: var(--muted); font-size: 13px; margin: 0; }
+    .subproject .tags { margin-top: 11px; padding-top: 0; }
+    .lab-layout { display: grid; grid-template-columns: .74fr 1.26fr; gap: 18px; align-items: stretch; }
+    .lab-menu { display: grid; gap: 8px; align-content: start; }
+    .lab-tab { text-align: left; border: 1px solid var(--line); border-radius: 12px; padding: 13px 15px; background: var(--panel); color: var(--muted); cursor: pointer; transition: .2s ease; }
+    .lab-tab b { display: block; color: var(--text); font-size: 12px; }
+    .lab-tab small { display: block; color: var(--faint); font-size: 10px; margin-top: 4px; }
+    .lab-tab[aria-selected="true"] { border-color: var(--accent); background: color-mix(in srgb,var(--accent) 7%,var(--panel)); }
+    .lab-panel { min-height: 320px; padding: 24px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); }
+    .lab-panel h3 { margin: 0 0 8px; font-size: 20px; letter-spacing: -.035em; }
+    .lab-panel > p { color: var(--muted); font-size: 13px; margin: 0 0 21px; max-width: 75ch; }
+    .flow { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; align-items: stretch; }
+    .flow-node { min-height: 94px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 7px; padding: 9px; text-align: center; border: 1px solid var(--line); border-radius: 11px; background: var(--panel-2); position: relative; }
+    .flow-node:not(:last-child)::after { content: "→"; position: absolute; right: -12px; top: 50%; transform: translate(50%,-50%); color: var(--accent); font: 14px var(--mono); z-index: 2; }
+    .flow-node b { font-size: 11px; line-height: 1.25; }.flow-node small { color: var(--faint); font: 9px var(--mono); }
+    .lab-note { margin-top: 17px; padding: 12px 14px; background: var(--bg-soft); border-left: 2px solid var(--accent); border-radius: 0 8px 8px 0; color: var(--muted); font-size: 12px; }
+    .principles { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 12px; margin-top: 16px; }
+    .principle { padding: 20px; background: var(--panel); border: 1px solid var(--line); border-radius: 15px; }
+    .principle .num { color: var(--accent); font: 11px var(--mono); }
+    .principle h3 { margin: 10px 0 7px; font-size: 15px; }
+    .principle p { margin: 0; color: var(--muted); font-size: 12px; }
+    .github-top { display: flex; align-items: center; gap: 12px; }
+    .github-avatar { width: 45px; height: 45px; border-radius: 50%; border: 1px solid var(--line); background: var(--panel-2); object-fit: cover; }
+    .github-identity b { display: block; font-size: 14px; }.github-identity span { display: block; color: var(--faint); font: 10px var(--mono); }
+    .github-stats { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
+    .gh-stat { min-width: 112px; padding: 11px 13px; background: var(--panel); border: 1px solid var(--line); border-radius: 11px; }
+    .gh-stat b { display: block; font: 700 19px var(--mono); color: var(--accent); }.gh-stat span { color: var(--faint); font-size: 10px; }
+    .github-status { margin-left: auto; color: var(--faint); font: 10px var(--mono); }
+    .repo-tools { display: flex; align-items: center; gap: 10px; margin: 22px 0 14px; flex-wrap: wrap; }
+    .repo-search { flex: 1 1 230px; min-width: 0; padding: 11px 13px; color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 10px; outline: 0; font-size: 12px; }
+    .repo-search:focus { border-color: var(--accent); }
+    .repo-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+    .filter { border: 1px solid var(--line); padding: 8px 10px; border-radius: 8px; background: var(--panel); color: var(--muted); font: 10px var(--mono); cursor: pointer; }
+    .filter[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+    .repo-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+    .repo-card { display: flex; flex-direction: column; min-height: 173px; padding: 17px; border: 1px solid var(--line); border-radius: 13px; background: var(--panel); transition: transform .2s ease,border-color .2s ease; }
+    .repo-card:hover { transform: translateY(-3px); border-color: var(--accent); }
+    .repo-card h3 { margin: 0; font-size: 13px; overflow-wrap: anywhere; }.repo-card p { margin: 8px 0 13px; font-size: 11px; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .repo-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; color: var(--faint); font: 9px var(--mono); }
+    .repo-open { margin-top: 11px; color: var(--accent); font-size: 10px; font-weight: 750; }
+    .repo-empty, .repo-loading { padding: 22px; text-align: center; border: 1px dashed var(--line); border-radius: 13px; color: var(--muted); font-size: 12px; grid-column: 1/-1; }
+    .repo-kicker { color: var(--accent); font: 9px var(--mono); letter-spacing: .09em; text-transform: uppercase; margin-bottom: 9px; }
+    .repo-card h3 a { color: var(--text); } .repo-card h3 a:hover { color: var(--accent); }
+    .repo-results { color: var(--faint); font: 10px var(--mono); margin: 11px 0 0; }
+    .repo-more-wrap { display: flex; justify-content: center; margin-top: 16px; }
+    .repo-more { border: 1px solid var(--line); border-radius: 10px; padding: 10px 15px; background: var(--panel); color: var(--text); font-size: 11px; font-weight: 700; cursor: pointer; }
+    .repo-more:hover { border-color: var(--accent); color: var(--accent); }
+    .repo-status-link { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .experience { display: grid; grid-template-columns: .65fr 1.35fr; gap: 50px; }
+    .timeline { border-left: 1px solid var(--line); padding-left: 25px; }
+    .job { position: relative; padding: 0 0 27px; }
+    .job:last-child { padding-bottom: 0; }
+    .job::before { content: ""; position: absolute; left: -31px; top: 6px; width: 10px; height: 10px; border: 2px solid var(--accent); background: var(--bg); border-radius: 50%; }
+    .job-time { color: var(--accent); font: 10px var(--mono); }
+    .job h3 { margin: 5px 0 5px; font-size: 16px; }.job p { margin: 0; color: var(--muted); font-size: 12.5px; }
+    .education-card { padding: 22px; border: 1px solid var(--line); background: var(--panel); border-radius: var(--radius); }
+    .education-card .degree { color: var(--accent); font: 10px var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+    .education-card h3 { margin: 9px 0 5px; font-size: 20px; }.education-card p { color: var(--muted); margin: 0; font-size: 12px; }
+    .skills-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+    .skill-group { padding: 21px; border: 1px solid var(--line); border-radius: 15px; background: var(--panel); }
+    .skill-group h3 { display: flex; align-items: center; gap: 9px; margin: 0 0 13px; font-size: 14px; }
+    .skill-icon { display: grid; place-items: center; width: 27px; height: 27px; border-radius: 8px; background: color-mix(in srgb,var(--accent) 10%,var(--panel-2)); color: var(--accent); font: 11px var(--mono); }
+    .skill-group p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.9; }
+    .cert-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 9px; margin-top: 20px; }
+    .cert { padding: 13px 15px; border: 1px solid var(--line); background: var(--panel); border-radius: 11px; }
+    .cert b { display: block; font-size: 11px; }.cert span { display: block; color: var(--faint); font-size: 10px; margin-top: 4px; }
+    .contact-panel { position: relative; padding: clamp(25px,5vw,48px); border: 1px solid color-mix(in srgb,var(--accent) 25%,var(--line)); border-radius: 22px; background: radial-gradient(circle at 90% 0%,color-mix(in srgb,var(--accent-2) 10%,transparent),transparent 38%),var(--panel); overflow: hidden; }
+    .contact-panel h2 { max-width: 700px; margin: 0; font-size: clamp(30px,4vw,47px); line-height: 1.1; letter-spacing: -.055em; }
+    .contact-panel p { max-width: 610px; color: var(--muted); font-size: 14px; margin: 15px 0 22px; }
+    .contact-links { display: flex; flex-wrap: wrap; gap: 9px; }
+    footer { padding: 25px 0 35px; border-top: 1px solid var(--line); color: var(--faint); font-size: 10px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-inner .mono { font-family: var(--mono); }
+    dialog { width: min(760px, calc(100% - 28px)); max-height: min(82vh,850px); padding: 0; color: var(--text); background: var(--panel); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 30px 100px rgba(0,0,0,.5); }
+    dialog::backdrop { background: rgba(2,8,12,.72); backdrop-filter: blur(5px); }
+    .modal-head { position: sticky; top: 0; display: flex; align-items: center; justify-content: space-between; padding: 17px 21px; background: var(--panel); border-bottom: 1px solid var(--line); z-index: 2; }
+    .modal-head span { color: var(--accent); font: 10px var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+    .modal-close { width: 32px; height: 32px; border: 1px solid var(--line); border-radius: 9px; background: var(--panel-2); color: var(--muted); cursor: pointer; }
+    .modal-body { padding: 23px; }.modal-body h2 { font-size: 26px; letter-spacing: -.04em; margin: 0 0 8px; }.modal-body > p { color: var(--muted); font-size: 13px; margin: 0 0 19px; }
+    .modal-section { margin-top: 20px; }.modal-section h3 { margin: 0 0 8px; font-size: 13px; }.modal-section ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: 12px; }.modal-section li { padding: 4px 0; }
+    .modal-callout { margin-top: 18px; padding: 13px 15px; border-left: 2px solid var(--accent); border-radius: 0 8px 8px 0; background: var(--bg-soft); color: var(--muted); font-size: 12px; }
+    .muted-note { color: var(--faint); font-size: 10px; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }.workbench { max-width: 640px; transform: none; }.hero { padding-top: 70px; }
+      .proof { grid-template-columns: repeat(2,1fr); }.repo-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }.experience { grid-template-columns: 1fr; gap: 25px; }.section-aside { display: none; }
+    }
+    @media (max-width: 700px) {
+      .wrap { width: min(var(--max), calc(100% - 30px)); }.nav { height: 64px; }.navlinks { display: none; position: absolute; top: 64px; left: 0; right: 0; padding: 15px 18px 18px; background: var(--panel); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
+      .navlinks.open { display: flex; }.navlinks a { padding: 11px 4px; font-size: 13px; }.menu-btn { display: grid; }.hero { padding: 58px 0 46px; }h1 { font-size: clamp(40px,12vw,59px); }.hero-grid { gap: 35px; }.workbench { max-width: 100%; }.proof { margin-top: 30px; gap: 7px; }.proof-item { padding: 14px; }.proof-item span { font-size: 10px; }
+      section { padding: 64px 0; }.section-head { display: block; }.feature-grid { grid-template-columns: 1fr; }.project.featured { grid-column: auto; }.project.featured .project-layout { grid-template-columns: 1fr; }.project.featured .project h3 { font-size: 25px; }.architecture-mini { max-width: 480px; }.split-card { grid-template-columns: 1fr; }.lab-layout { grid-template-columns: 1fr; }.lab-menu { grid-template-columns: repeat(3,1fr); }.lab-tab { padding: 10px; }.lab-tab b { font-size: 10px; }.lab-tab small { font-size: 9px; }.lab-panel { min-height: 0; padding: 18px; }.principles { grid-template-columns: 1fr 1fr; }.skills-grid { grid-template-columns: 1fr; }.cert-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px) {
+      .brand { font-size: 12px; }.brand-mark { width: 31px; height: 31px; }.nav-actions { margin-left: auto; }.hero-actions .btn { flex: 1 1 135px; }.pipeline-steps { grid-template-columns: repeat(2,1fr); }.proof-item b { font-size: 22px; }.flow { grid-template-columns: repeat(2,1fr); }.flow-node:nth-child(2)::after { display: none; }.repo-grid { grid-template-columns: 1fr; }.principles { grid-template-columns: 1fr; }.lab-menu { grid-template-columns: 1fr; }.lab-tab { text-align: left; }.cert-grid { grid-template-columns: 1fr; }.contact-links .btn { flex: 1 1 100%; }.github-status { width: 100%; margin: 4px 0 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
+    @media print { .topbar,.progress,.hero-actions,.repo-tools,.text-link,.contact-links,dialog { display: none !important; } body { background: white; color: black; } section { break-inside: avoid; }.project,.principle,.skill-group,.cert,.proof-item { background: white; border-color: #ccc; color: black; box-shadow: none; } }
+  </style>
+</head>
+<body>
+  <div class="progress" id="scrollProgress" aria-hidden="true"></div>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="topbar">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Jawdat Faisal Al-Hussein home"><span class="brand-mark">JH</span><span>jawdat<span class="dot">.</span>dev</span></a>
+      <div class="navlinks" id="navLinks">
+        <a href="#work">Work</a><a href="#engineering">Engineering</a><a href="#github">GitHub</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme" title="Toggle theme">◐</button>
+        <button class="menu-btn" id="menuToggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <div class="wrap" id="top">
+      <section class="hero" style="border:0;padding-left:0;padding-right:0">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow"><span class="pulse"></span> Software Engineer · Backend, Data & Machine Learning</div>
+            <h1>I build software systems that are <span class="gradient">measurable, testable, and useful.</span></h1>
+            <p class="intro">I’m <strong>Jawdat Faisal Al-Hussein</strong>, a computer engineering graduate focused on backend development, data engineering, and applied machine learning. My work spans the full delivery cycle—from modelling data and defining application boundaries to implementing services, validating behaviour, evaluating results, and documenting systems for the people who use and maintain them.</p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
+              <a class="btn" href="Jawdat-Faisal-Al-Hussein-CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
+              <a class="btn ghost" href="https://github.com/jaudat150" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+            <div class="microline"><span><i></i> Damascus, Syria</span><span><i></i> Open to remote opportunities</span><span><i></i> Arabic · English</span></div>
+          </div>
+          <aside class="workbench" aria-label="Illustrative software engineering workflow">
+            <div class="wb-head"><span class="window-dot"></span><span class="window-dot"></span><span class="window-dot"></span><span class="file">system_design.py</span></div>
+            <div class="wb-content">
+              <div class="code-label">// How I approach a system</div>
+              <div class="code-line"><span class="ln">01</span><span><span class="kw">class</span> <span class="fn">ReliableProduct</span>:</span></div>
+              <div class="code-line"><span class="ln">02</span><span>&nbsp;&nbsp;<span class="kw">def</span> <span class="fn">build</span>(self, problem):</span></div>
+              <div class="code-line"><span class="ln">03</span><span>&nbsp;&nbsp;&nbsp;&nbsp;model = <span class="fn">understand</span>(problem)</span></div>
+              <div class="code-line"><span class="ln">04</span><span>&nbsp;&nbsp;&nbsp;&nbsp;data = <span class="fn">validate</span>(model.inputs)</span></div>
+              <div class="code-line"><span class="ln">05</span><span>&nbsp;&nbsp;&nbsp;&nbsp;system = <span class="fn">compose</span>(data, model)</span></div>
+              <div class="code-line"><span class="ln">06</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">assert</span> <span class="fn">tests_pass</span>(system)</span></div>
+              <div class="code-line"><span class="ln">07</span><span>&nbsp;&nbsp;&nbsp;&nbsp;<span class="kw">return</span> <span class="fn">measure</span>(<span class="fn">ship</span>(system))</span></div>
+              <div class="code-line"><span class="ln">08</span><span class="comment"># Keep the evidence with the result.</span></div>
+              <div class="pipeline">
+                <div class="pipeline-title"><span>Engineering workflow</span><b>● traceable</b></div>
+                <div class="pipeline-steps">
+                  <div class="pipe-step"><strong>Model</strong><small>scope & data</small></div>
+                  <div class="pipe-step"><strong>Build</strong><small>clear modules</small></div>
+                  <div class="pipe-step"><strong>Verify</strong><small>tests & metrics</small></div>
+                  <div class="pipe-step"><strong>Ship</strong><small>usable product</small></div>
+                </div>
+                <div class="pipe-arrow"></div>
+              </div>
+            </div>
+            <div class="wb-foot"><span>design → implementation → evidence</span><span class="ok">● quality gates</span></div>
+          </aside>
+        </div>
+        <div class="proof" aria-label="Selected project metrics">
+          <div class="proof-item"><b>9</b><span>traffic-signal junctions controlled simultaneously</span></div>
+          <div class="proof-item"><b>100</b><span>paired seeds in the IPPO / MAPPO comparison</span></div>
+          <div class="proof-item"><b>6,800</b><span>lines of Python across 55 project modules</span></div>
+          <div class="proof-item"><b>48</b><span>automated checks for a reproducible research study</span></div>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="section-head">
+          <div><div class="kicker">01 / Selected work</div><h2 class="section-title">Systems designed beyond the interface.</h2><p class="section-copy">These projects demonstrate how I approach system design, data integrity, model evaluation, and end-to-end delivery. Each case study outlines the problem, the engineering decisions, and the evidence behind the outcome.</p></div>
+          <div class="section-aside">CASE STUDIES · RESEARCH · PRODUCTS</div>
+        </div>
+
+        <div class="feature-grid">
+          <article class="project featured">
+            <div class="project-layout">
+              <div>
+                <div class="project-top"><span class="project-type">Graduation project · Multi-agent systems</span><span class="project-state">Team of 2</span></div>
+                <h3>Adaptive Traffic Signal Control with Multi-Agent Reinforcement Learning</h3>
+                <p>Developed a SUMO/TraCI environment in which nine signalised junctions make decisions simultaneously. Implemented IPPO and MAPPO in PyTorch and evaluated both policies over 100 paired seeds, applying statistical correction across network metrics to support a controlled comparison.</p>
+                <div class="metric-row"><div class="metric"><b>9</b><small>signalised junctions</small></div><div class="metric"><b>211</b><small>traffic routes</small></div><div class="metric"><b>100</b><small>paired seeds / policy</small></div><div class="metric"><b>17</b><small>pytest suites</small></div></div>
+                <div class="tags"><span class="tag">PyTorch</span><span class="tag">SUMO / TraCI</span><span class="tag">PettingZoo</span><span class="tag">Gymnasium</span><span class="tag">GAE</span><span class="tag">Applied statistics</span></div>
+                <div class="project-links"><button class="text-link" data-modal="trafficModal">Explore engineering decisions ↗</button><a class="text-link" href="https://github.com/jaudat150" target="_blank" rel="noopener noreferrer">GitHub profile ↗</a></div>
+              </div>
+              <div class="architecture-mini" aria-label="Traffic control system architecture">
+                <div class="arch-caption">System shape · simplified</div>
+                <div class="arch-stack">
+                  <div class="arch-node"><strong>SUMO + TraCI</strong><span>traffic simulation</span></div>
+                  <div class="arch-node"><strong>Parallel environment</strong><span>9 agents · 20 features</span></div>
+                  <div class="arch-node"><strong>IPPO / MAPPO policies</strong><span>continuous duration</span></div>
+                  <div class="arch-node active"><strong>Evaluation pipeline</strong><span>paired seeds · tests</span></div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="project">
+            <div class="project-top"><span class="project-type">Data engineering · Analytics</span><span class="project-state">Private · Team of 2</span></div>
+            <h3>MTNSYR — Telecom Data Warehouse & Analytics</h3>
+            <p>Developed in a team of two, this platform reconciles data from MTN Syria and Syriatel into a five-table SQLite star schema. Its ETL workflow maps differing columns, normalises city data, deduplicates records at phone level, and supports both incremental and full reloads. The resulting model feeds customer-value and spending-segment analyses, presented through a nine-page dashboard.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">pandas</span><span class="tag">SQLite</span><span class="tag">scikit-learn</span><span class="tag">Streamlit</span><span class="tag">Plotly</span></div>
+            <div class="project-links"><button class="text-link" data-modal="warehouseModal">Explore data architecture ↗</button></div>
+          </article>
+
+          <article class="project">
+            <div class="project-top"><span class="project-type">Open source · Data product</span><span class="project-state">Public · MIT</span></div>
+            <h3>Global Debt & Fiscal Atlas</h3>
+            <p>An open-data application for exploring sovereign debt, public spending, and bilateral lending. The project brings source data, application logic, documentation, and validation into one codebase, with a companion site that makes country-level information easier to explore and reference.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Streamlit</span><span class="tag">World Bank</span><span class="tag">IMF</span><span class="tag">REST APIs</span><span class="tag">GitHub Actions</span></div>
+            <div class="project-links"><a class="text-link" href="https://jaudat150.github.io/global-debt-explorer/" target="_blank" rel="noopener noreferrer">Live product ↗</a><a class="text-link" href="https://github.com/jaudat150/global-debt-explorer" target="_blank" rel="noopener noreferrer">Source code ↗</a></div>
+          </article>
+
+          <article class="project">
+            <div class="project-top"><span class="project-type">Research · Optimisation</span><span class="project-state">Published preprint</span></div>
+            <h3>When Exhaustive Search Beats a Genetic Algorithm</h3>
+            <p>A reproducible comparison of a genetic algorithm with exhaustive search over an identical feasible solution space. The study emphasises fair baselines, input provenance, and independently verifiable results—including the discipline to report when a more complex method provides no measurable advantage.</p>
+            <div class="metric-row"><div class="metric"><b>17/17</b><small>exact optima reached</small></div><div class="metric"><b>166×</b><small>fitness evaluations</small></div><div class="metric"><b>48</b><small>verification checks</small></div></div>
+            <div class="tags"><span class="tag">Python</span><span class="tag">Combinatorial optimisation</span><span class="tag">Testing</span><span class="tag">Data provenance</span></div>
+            <div class="project-links"><a class="text-link" href="https://doi.org/10.5281/zenodo.22844539" target="_blank" rel="noopener noreferrer">Read preprint ↗</a><a class="text-link" href="https://github.com/jaudat150/art-regimen-selection-with-GA" target="_blank" rel="noopener noreferrer">Code & verification ↗</a></div>
+            <p class="muted-note" style="margin-top:12px">Methodological research using synthetic case profiles. The work is not intended for clinical decision-making or patient care.</p>
+          </article>
+        </div>
+
+        <div class="split-card">
+          <article class="subproject">
+            <div class="project-type">Full-stack · Computer vision</div><h3>Planter — Plant Health Platform</h3>
+            <p>Developed a Django web application that analyses leaf photographs using a TensorFlow convolutional model. The application combines model inference with user accounts and a diagnosis-history workflow.</p>
+            <div class="tags"><span class="tag">Django</span><span class="tag">TensorFlow</span><span class="tag">AJAX</span><span class="tag">Tailwind</span></div>
+            <div class="project-links"><a class="text-link" href="https://github.com/jaudat150/Planter-" target="_blank" rel="noopener noreferrer">Repository ↗</a></div>
+          </article>
+          <article class="subproject">
+            <div class="project-type">Backend · Data visualisation</div><h3>Django Plotter Pro</h3>
+            <p>Built a Django application that converts manually entered or CSV-imported data into interactive charts. It includes input validation, saved visualisations, image export, and download of the original data.</p>
+            <div class="tags"><span class="tag">Django</span><span class="tag">CSV</span><span class="tag">JavaScript</span><span class="tag">Bootstrap</span></div>
+            <div class="project-links"><a class="text-link" href="https://github.com/jaudat150/Django-Plotter-Pro" target="_blank" rel="noopener noreferrer">Repository ↗</a></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="engineering">
+        <div class="section-head">
+          <div><div class="kicker">02 / Engineering depth</div><h2 class="section-title">I focus on the engineering between components.</h2><p class="section-copy">Select a system to explore its architecture. Each view focuses on the interfaces between components—the data transformations, validation points, and design trade-offs that determine whether the complete system is maintainable and dependable.</p></div>
+          <div class="section-aside">ARCHITECTURE EXPLORER · INTERACTIVE</div>
+        </div>
+        <div class="lab-layout">
+          <div class="lab-menu" role="tablist" aria-label="Architecture examples">
+            <button class="lab-tab" role="tab" id="tabTraffic" aria-selected="true" aria-controls="architecturePanel" data-arch="traffic"><b>01 · Multi-agent RL</b><small>Simulation → policy → evidence</small></button>
+            <button class="lab-tab" role="tab" id="tabData" aria-selected="false" aria-controls="architecturePanel" data-arch="data"><b>02 · Data warehouse</b><small>Sources → model → analytics</small></button>
+            <button class="lab-tab" role="tab" id="tabWeb" aria-selected="false" aria-controls="architecturePanel" data-arch="web"><b>03 · Web application</b><small>Request → domain → persistence</small></button>
+          </div>
+          <div class="lab-panel" id="architecturePanel" role="tabpanel" aria-labelledby="tabTraffic" tabindex="0">
+            <h3 id="archTitle">A controlled learning and evaluation loop</h3>
+            <p id="archDescription">The simulation environment, policy implementation, and evaluation pipeline are independent components. This separation allows both algorithms to use the same environment and interaction budget, while the impact of the critic design can be isolated and measured.</p>
+            <div class="flow" id="architectureFlow">
+              <div class="flow-node"><b>SUMO / TraCI</b><small>world state</small></div><div class="flow-node"><b>Parallel env</b><small>observations</small></div><div class="flow-node"><b>IPPO / MAPPO</b><small>actions</small></div><div class="flow-node"><b>Evaluation</b><small>paired results</small></div>
+            </div>
+            <div class="lab-note" id="archNote">Design point: 20-dimensional observations use smooth saturation to preserve distinctions between heavy queues instead of losing information through hard clipping.</div>
+          </div>
+        </div>
+        <div class="principles">
+          <article class="principle"><span class="num">01 / BOUNDARIES</span><h3>Separate responsibilities</h3><p>Separate ingestion, transformation, domain logic, persistence, and presentation into clear responsibilities. Assemble dependencies through an explicit composition point so that components can be tested and changed without tightly coupling the entire application.</p></article>
+          <article class="principle"><span class="num">02 / DATA INTEGRITY</span><h3>Make transformations explicit</h3><p>Treat data reconciliation as a defined engineering stage: map source schemas, normalise identifiers, specify deduplication rules, and make the distinction between full and incremental loads explicit.</p></article>
+          <article class="principle"><span class="num">03 / TESTABILITY</span><h3>Test invariants, not only examples</h3><p>Test system invariants as well as individual examples. Examples include equivalent feasible solution sets, stable data transformations, repeatable outputs, and metrics that remain consistent under equivalent conditions.</p></article>
+          <article class="principle"><span class="num">04 / MEASUREMENT</span><h3>Design fair comparisons</h3><p>Control experimental conditions, use paired seeds where appropriate, select statistical tests that match the design, and correct for multiple comparisons. Reliable conclusions depend on the quality of the evaluation protocol.</p></article>
+          <article class="principle"><span class="num">05 / OPERATIONS</span><h3>Build for real usage</h3><p>Design for operation as well as implementation: provide clear command-line workflows, structured logs, explicit failure states, repeatable data refreshes, and documentation that supports the next person responsible for the system.</p></article>
+          <article class="principle"><span class="num">06 / TRADE-OFFS</span><h3>Choose the simplest sound tool</h3><p>Establish a strong baseline before introducing additional complexity. Prefer the simplest method that meets the requirements, and justify more sophisticated techniques with measurable improvements.</p></article>
+        </div>
+      </section>
+
+      <section id="github">
+        <div class="section-head">
+          <div><div class="kicker">03 / Public code</div><h2 class="section-title">Explore my public code.</h2><p class="section-copy">Browse a curated selection of public repositories, search by project or technology, and filter by language. The catalogue is included with the portfolio, so it remains usable if GitHub’s API is unavailable; live metadata is added automatically when the service responds.</p></div>
+          <div class="section-aside">FEATURED REPOSITORIES · LIVE ENRICHMENT</div>
+        </div>
+        <div class="github-top">
+          <img class="github-avatar" id="githubAvatar" src="https://github.com/jaudat150.png" alt="GitHub avatar for jaudat150" loading="lazy">
+          <div class="github-identity"><b id="githubName">Jawdat Faisal Al-Hussein</b><span id="githubHandle">@jaudat150 · github.com/jaudat150</span></div>
+          <div class="github-status" id="githubStatus" role="status" aria-live="polite">Curated project catalogue · live metadata refresh enabled</div>
+        </div>
+        <div class="github-stats" aria-label="Repository information">
+          <div class="gh-stat"><b id="ghFeatured">9</b><span>Curated repositories</span></div>
+          <div class="gh-stat"><b id="ghRepos">—</b><span>Public repositories retrieved</span></div>
+          <div class="gh-stat"><b id="ghStars">—</b><span>Stars across loaded repositories</span></div>
+          <div class="gh-stat"><b id="ghLanguages">—</b><span>Languages represented</span></div>
+        </div>
+        <div class="repo-tools">
+          <input class="repo-search" id="repoSearch" type="search" placeholder="Search repositories, descriptions, or languages…" aria-label="Search GitHub repositories">
+          <div class="repo-filters" role="group" aria-label="Filter repository results"><button class="filter" data-repofilter="all" aria-pressed="true">All</button><button class="filter" data-repofilter="python" aria-pressed="false">Python</button><button class="filter" data-repofilter="javascript" aria-pressed="false">JavaScript / TypeScript</button><button class="filter" data-repofilter="other" aria-pressed="false">Other</button></div>
+        </div>
+        <div class="repo-grid" id="repoGrid" aria-live="polite">
+          <article class="repo-card" data-fallback="true">
+            <div class="repo-kicker">Featured public project</div>
+            <h3><a href="https://github.com/jaudat150/global-debt-explorer" target="_blank" rel="noopener noreferrer">global-debt-explorer</a></h3>
+            <p>Open-data application for exploring sovereign debt, public spending, and bilateral lending. The codebase brings source data, application logic, documentation, and validation together, with a companion country-level explorer.</p>
+            <div class="repo-meta"><span>Python</span><span>Public repository</span></div>
+            <a class="repo-open" href="https://github.com/jaudat150/global-debt-explorer" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+          </article>
+          <article class="repo-card" data-fallback="true">
+            <div class="repo-kicker">Featured public project</div>
+            <h3><a href="https://github.com/jaudat150/art-regimen-selection-with-GA" target="_blank" rel="noopener noreferrer">art-regimen-selection-with-GA</a></h3>
+            <p>Reproducible optimisation study comparing a genetic algorithm with exhaustive search over the same feasible solution space. Includes verification code and a published methodological preprint; not intended for clinical use.</p>
+            <div class="repo-meta"><span>Python</span><span>Public repository</span></div>
+            <a class="repo-open" href="https://github.com/jaudat150/art-regimen-selection-with-GA" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+          </article>
+          <article class="repo-card" data-fallback="true">
+            <div class="repo-kicker">Featured public project</div>
+            <h3><a href="https://github.com/jaudat150/Planter-" target="_blank" rel="noopener noreferrer">Planter-</a></h3>
+            <p>Django web application for plant-leaf image diagnosis, combining a TensorFlow convolutional model with user accounts and diagnosis history.</p>
+            <div class="repo-meta"><span>Python</span><span>Public repository</span></div>
+            <a class="repo-open" href="https://github.com/jaudat150/Planter-" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+          </article>
+          <article class="repo-card" data-fallback="true">
+            <div class="repo-kicker">Featured public project</div>
+            <h3><a href="https://github.com/jaudat150/Django-Plotter-Pro" target="_blank" rel="noopener noreferrer">Django-Plotter-Pro</a></h3>
+            <p>Django application for creating interactive charts from manual input or CSV files, with validation, saved visualisations, and data and image exports.</p>
+            <div class="repo-meta"><span>Python</span><span>Public repository</span></div>
+            <a class="repo-open" href="https://github.com/jaudat150/Django-Plotter-Pro" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+          </article>
+          <article class="repo-card" data-fallback="true">
+            <div class="repo-kicker">Featured public project</div>
+            <h3><a href="https://github.com/jaudat150/VScanner---V-stands-for-Vibe-not-Virus" target="_blank" rel="noopener noreferrer">VScanner---V-stands-for-Vibe-not-Virus</a></h3>
+            <p>Windows desktop utility for defensive system inspection, including process and service review, file hashing, reputation lookups, and exportable reports.</p>
+            <div class="repo-meta"><span>Python</span><span>Public repository</span></div>
+            <a class="repo-open" href="https://github.com/jaudat150/VScanner---V-stands-for-Vibe-not-Virus" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+          </article>
+          <article class="repo-card" data-fallback="true">
+            <div class="repo-kicker">Featured public project</div>
+            <h3><a href="https://github.com/jaudat150/improved_python_with_C" target="_blank" rel="noopener noreferrer">improved_python_with_C</a></h3>
+            <p>Minimal example of a native Python extension built with the CPython API and setuptools, illustrating how compiled C code can be exposed as an importable Python module.</p>
+            <div class="repo-meta"><span>C</span><span>Public repository</span></div>
+            <a class="repo-open" href="https://github.com/jaudat150/improved_python_with_C" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+          </article>
+          <article class="repo-card" data-fallback="true">
+            <div class="repo-kicker">Featured public project</div>
+            <h3><a href="https://github.com/jaudat150/OS-s-automation-and-security-" target="_blank" rel="noopener noreferrer">OS-s-automation-and-security-</a></h3>
+            <p>Collection of Windows administration and security-focused automation examples, with an emphasis on understanding system configuration and defensive inspection.</p>
+            <div class="repo-meta"><span>Python</span><span>Public repository</span></div>
+            <a class="repo-open" href="https://github.com/jaudat150/OS-s-automation-and-security-" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+          </article>
+          <article class="repo-card" data-fallback="true">
+            <div class="repo-kicker">Featured public project</div>
+            <h3><a href="https://github.com/jaudat150/password_wordlist_evolution" target="_blank" rel="noopener noreferrer">password_wordlist_evolution</a></h3>
+            <p>Modular research project exploring genetic-algorithm approaches to candidate-list evolution in authorised security-assessment contexts.</p>
+            <div class="repo-meta"><span>Python</span><span>Public repository</span></div>
+            <a class="repo-open" href="https://github.com/jaudat150/password_wordlist_evolution" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+          </article>
+          <article class="repo-card" data-fallback="true">
+            <div class="repo-kicker">Featured public project</div>
+            <h3><a href="https://github.com/jaudat150/Report-Papers" target="_blank" rel="noopener noreferrer">Report-Papers</a></h3>
+            <p>Technical reports and project notes covering neural networks, networking, system administration, and embedded development.</p>
+            <div class="repo-meta"><span>Technical writing</span><span>Public repository</span></div>
+            <a class="repo-open" href="https://github.com/jaudat150/Report-Papers" target="_blank" rel="noopener noreferrer">Open repository ↗</a>
+          </article>
+        </div>
+        <div class="repo-results" id="repoResults" aria-live="polite">Showing 9 featured repositories.</div>
+        <div class="repo-more-wrap"><button class="repo-more" id="repoMore" type="button" hidden>Show more repositories</button></div>
+        <div style="margin-top:18px"><a class="btn" href="https://github.com/jaudat150?tab=repositories" target="_blank" rel="noopener noreferrer">Browse all repositories on GitHub ↗</a></div>
+      </section>
+
+      <section id="about">
+        <div class="section-head">
+          <div><div class="kicker">04 / Background</div><h2 class="section-title">Software engineering, research, and teaching.</h2><p class="section-copy">My experience combines software delivery, programming instruction, and operational coordination. Teaching strengthened my ability to explain complex concepts clearly; freelance and project work has required translating requirements into working applications, data workflows, and maintainable implementations.</p></div>
+        </div>
+        <div class="experience">
+          <div class="education-card"><span class="degree">Education · Completed 2026</span><h3>B.Sc. Computer Engineering</h3><p>Antioch Private University, Rural Damascus, Syria.<br><br>Graduated 10 August 2026.</p></div>
+          <div class="timeline">
+            <article class="job"><div class="job-time">2022 — Present</div><h3>Freelance Software Engineer</h3><p>Deliver Django and JavaScript applications from data modelling through implementation and deployment. Client projects have also included machine-learning model training, data pipeline development, web data collection, and technical reporting.</p></article>
+            <article class="job"><div class="job-time">2023 — 2026</div><h3>Programming Instructor</h3><p>Delivered Python, C++, and JavaScript instruction to learners at different experience levels. Developed project-based learning materials and evaluated progress through practical assignments and completed projects.</p></article>
+            <article class="job"><div class="job-time">2023 — 2026</div><h3>Administrative Staff · Language Institute</h3><p>Coordinated enrolment, scheduling, and communication among students, instructors, and management. Supported the organisation of academic activities and day-to-day administrative operations.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="section-head">
+          <div><div class="kicker">05 / Technical toolkit</div><h2 class="section-title">Tools I use to solve problems.</h2><p class="section-copy">Organised by the engineering disciplines they support, with emphasis on how each tool contributes to implementation, analysis, and delivery.</p></div>
+        </div>
+        <div class="skills-grid">
+          <article class="skill-group"><h3><span class="skill-icon">BE</span> Backend & application engineering</h3><p>Python · Django · REST APIs · JavaScript · PostgreSQL · SQL Server · SQLite · PHP · Bootstrap · Tailwind CSS · role-based access control</p></article>
+          <article class="skill-group"><h3><span class="skill-icon">DE</span> Data engineering & analytics</h3><p>SQL · pandas · ETL design · schema reconciliation · data normalisation · deduplication · star schemas · Streamlit · Plotly · CSV workflows</p></article>
+          <article class="skill-group"><h3><span class="skill-icon">ML</span> Machine learning & optimisation</h3><p>PyTorch · TensorFlow · scikit-learn · NumPy · Gymnasium · PettingZoo · SUMO / TraCI · CUDA · genetic algorithms · reinforcement learning</p></article>
+          <article class="skill-group"><h3><span class="skill-icon">SE</span> Software engineering practice</h3><p>Data structures & algorithms · object-oriented design · dependency injection · modular architecture · Git · GitHub Actions · Docker · Linux · pytest · structured logging · technical documentation</p></article>
+          <article class="skill-group"><h3><span class="skill-icon">CS</span> Systems & security foundations</h3><p>C · C++ · Java · Bash · PowerShell · Windows internals · network and application security fundamentals · defensive system inspection · hashing</p></article>
+          <article class="skill-group"><h3><span class="skill-icon">RS</span> Research & measurement</h3><p>Experimental design · paired comparisons · hypothesis testing · confidence intervals · multiple-comparison correction · reproducible workflows · data provenance</p></article>
+        </div>
+        <div class="kicker" style="margin-top:30px">Selected certifications</div>
+        <div class="cert-grid">
+          <div class="cert"><b>Deep Learning Specialization</b><span>DeepLearning.AI · neural networks, optimisation, CNNs, ML project structure</span></div>
+          <div class="cert"><b>Reinforcement Learning</b><span>MathWorks</span></div>
+          <div class="cert"><b>Django Web Applications</b><span>University of Michigan · three courses</span></div>
+          <div class="cert"><b>Python & Databases for Data Science</b><span>IBM</span></div>
+          <div class="cert"><b>Automate Cybersecurity Tasks with Python</b><span>Google</span></div>
+          <div class="cert"><b>Security & Ethical Hacking</b><span>University of Colorado Boulder</span></div>
+          <div class="cert"><b>ISO/IEC 27001:2022 Awareness</b><span>Syrian Center for ISO Experts · 20 hours</span></div>
+          <div class="cert"><b>Additional technical certificates</b><span>Data analytics, Linux administration, and networking</span></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="contact-panel">
+          <div class="kicker"><span class="pulse"></span> Open to opportunities</div>
+          <h2>Have a real problem to solve? Let’s build the right system.</h2>
+          <p>I’m open to opportunities in backend and full-stack engineering, data engineering, and applied machine learning. I’m particularly interested in teams that value clear system boundaries, readable code, responsible ownership, automated testing, and evidence-based technical decisions.</p>
+          <div class="contact-links">
+            <a class="btn primary" href="mailto:jaudatalhusein@gmail.com">Email me ↗</a>
+            <a class="btn" href="https://github.com/jaudat150" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <a class="btn" href="https://www.linkedin.com/in/jaudat-faisal-al-husein" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a class="btn" href="Jawdat-Faisal-Al-Hussein-CV.pdf" download>Download CV ↓</a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>© <span id="year"></span> Jawdat Faisal Al-Hussein</span><span class="mono">Designed to make the work easy to inspect.</span><span><a href="#top">Back to top ↑</a></span></div></footer>
+
+  <dialog id="trafficModal" aria-labelledby="trafficTitle">
+    <div class="modal-head"><span>Case study · Multi-agent RL</span><button class="modal-close" data-close aria-label="Close dialog">✕</button></div>
+    <div class="modal-body"><h2 id="trafficTitle">Adaptive traffic signal control</h2><p>A controlled comparison of independent and centralised-critic policy optimisation in a shared traffic simulation, designed to isolate the contribution of critic architecture.</p>
+      <div class="modal-section"><h3>System design</h3><ul><li>Built a SUMO/TraCI environment with nine signalised junctions under simultaneous control and 211 routes.</li><li>Designed a 20-dimensional observation and a continuous green-duration action space from 5 to 120 seconds.</li><li>Implemented IPPO and MAPPO in PyTorch, sharing the actor, observation, reward, hyperparameters, and interaction budget to isolate the critic difference.</li><li>Designed a multi-term reward around queue and delay, throughput, progress, starvation, and spillback.</li></ul></div>
+      <div class="modal-section"><h3>Evaluation and engineering</h3><ul><li>Compared policies over 100 paired seeds, discarding a 300-second warm-up.</li><li>Used paired statistical tests with Holm correction across nine network metrics.</li><li>Fine-tuned the selected policy on two OpenStreetMap-derived Damascus networks: Kafr Sousa and Abu Rummaneh–Muhajireen.</li><li>Delivered approximately 6,800 lines of Python across 55 modules, one CLI for training and evaluation workflows, structured JSON logging, and 17 pytest suites.</li></ul></div>
+      <div class="modal-callout">Reported comparison in the CV: MAPPO mean wait of 82.9 s versus 85.1 s for IPPO, with 6,125 vehicles cleared (+1.9% over IPPO). These are results from the stated experimental setup, not a universal traffic-control claim.</div>
+    </div>
+  </dialog>
+  <dialog id="warehouseModal" aria-labelledby="warehouseTitle">
+    <div class="modal-head"><span>Case study · Data platform</span><button class="modal-close" data-close aria-label="Close dialog">✕</button></div>
+    <div class="modal-body"><h2 id="warehouseTitle">MTNSYR telecom data warehouse</h2><p>Transform two differently structured telecom datasets into a consistent analytical model that supports reporting, customer segmentation, and customer-value analysis.</p>
+      <div class="modal-section"><h3>Pipeline stages</h3><ul><li><strong>Ingestion:</strong> work with source data from MTN Syria and Syriatel.</li><li><strong>Reconciliation:</strong> map differing columns and normalise city names into shared representations.</li><li><strong>Data quality:</strong> deduplicate records at phone level and support both incremental and full reloads.</li><li><strong>Modelling:</strong> load a five-table SQLite star schema for analytical queries.</li><li><strong>Analytics:</strong> train a Random Forest customer-lifetime-value regressor and a class-balanced decision tree for four spending segments.</li><li><strong>Delivery:</strong> expose the workflow through a single CLI and a nine-page Streamlit / Plotly dashboard.</li></ul></div>
+      <div class="modal-callout">The project uses a layered architecture and a dependency-injection factory to compose the components. It was developed by a team of two.</div>
+    </div>
+  </dialog>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const themeButton = document.getElementById('themeToggle');
+      const menuButton = document.getElementById('menuToggle');
+      const navLinks = document.getElementById('navLinks');
+      const yearNode = document.getElementById('year');
+      yearNode.textContent = new Date().getFullYear();
+
+      // Theme preference, with a system-preference fallback.
+      let theme = 'dark';
+      try { theme = localStorage.getItem('jawdat-portfolio-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); } catch (_) {}
+      root.dataset.theme = theme;
+      const syncThemeButton = () => themeButton.setAttribute('aria-label', root.dataset.theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      syncThemeButton();
+      themeButton.addEventListener('click', () => {
+        root.dataset.theme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+        try { localStorage.setItem('jawdat-portfolio-theme', root.dataset.theme); } catch (_) {}
+        syncThemeButton();
+      });
+
+      // Mobile navigation.
+      menuButton.addEventListener('click', () => {
+        const open = navLinks.classList.toggle('open');
+        menuButton.setAttribute('aria-expanded', String(open));
+        menuButton.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+        menuButton.textContent = open ? '✕' : '☰';
+      });
+      navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+        navLinks.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.textContent = '☰';
+      }));
+
+      // Scroll progress and active section indicator.
+      const progress = document.getElementById('scrollProgress');
+      const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        progress.style.width = `${max > 0 ? (window.scrollY / max) * 100 : 0}%`;
+      };
+      window.addEventListener('scroll', updateProgress, { passive: true }); updateProgress();
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.querySelectorAll('a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === `#${entry.target.id}`));
+          }
+        }), { rootMargin: '-30% 0px -60% 0px' });
+        document.querySelectorAll('main section[id]').forEach(section => observer.observe(section));
+      }
+
+      // Project case-study dialogs.
+      document.querySelectorAll('[data-modal]').forEach(button => button.addEventListener('click', () => {
+        const dialog = document.getElementById(button.dataset.modal);
+        if (dialog && typeof dialog.showModal === 'function') dialog.showModal();
+      }));
+      document.querySelectorAll('dialog [data-close]').forEach(button => button.addEventListener('click', () => button.closest('dialog').close()));
+      document.querySelectorAll('dialog').forEach(dialog => {
+        dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+      });
+
+      // Interactive architecture explorer.
+      const architectures = {
+        traffic: {
+          title: 'A controlled learning and evaluation loop',
+          description: 'The simulation environment, policy implementation, and evaluation pipeline are independent components. This separation allows both algorithms to use the same environment and interaction budget, while the impact of the critic design can be isolated and measured.',
+          nodes: [['SUMO / TraCI','world state'],['Parallel env','observations'],['IPPO / MAPPO','actions'],['Evaluation','paired results']],
+          note: 'Design point: 20-dimensional observations use smooth saturation to preserve distinctions between heavy queues instead of losing information through hard clipping.'
+        },
+        data: {
+          title: 'A repeatable path from raw sources to analysis',
+          description: 'The warehouse first reconciles source differences, then stores a consistent analytical model. The model layer can be reused by reporting and predictive workloads without each dashboard reimplementing data cleanup.',
+          nodes: [['MTN + Syriatel','source data'],['Reconcile','map & normalise'],['Star schema','5 SQLite tables'],['Analytics','models & UI']],
+          note: 'Design point: incremental and full reloads are explicit modes; phone-level deduplication and shared column mappings keep the downstream model consistent.'
+        },
+        web: {
+          title: 'Keep the web layer thin and responsibilities clear',
+          description: 'A maintainable Django application separates request handling, domain rules, and persistence. Authentication and role boundaries are part of the application model, not visual decoration.',
+          nodes: [['HTTP request','validation'],['Django views','application flow'],['Domain logic','business rules'],['Database','persist state']],
+          note: 'Design point: keep business rules testable outside templates, validate input at boundaries, and enforce staff/admin permissions on the server side.'
+        }
+      };
+      const archTabs = [...document.querySelectorAll('[data-arch]')];
+      const archTitle = document.getElementById('archTitle');
+      const archDescription = document.getElementById('archDescription');
+      const archFlow = document.getElementById('architectureFlow');
+      const archNote = document.getElementById('archNote');
+      function showArchitecture(key) {
+        const item = architectures[key]; if (!item) return;
+        archTabs.forEach(tab => { const selected = tab.dataset.arch === key; tab.setAttribute('aria-selected', String(selected)); tab.tabIndex = selected ? 0 : -1; });
+        document.getElementById('architecturePanel').setAttribute('aria-labelledby', archTabs.find(t => t.dataset.arch === key).id);
+        archTitle.textContent = item.title; archDescription.textContent = item.description; archNote.textContent = item.note;
+        archFlow.replaceChildren(...item.nodes.map(([title, detail]) => {
+          const node = document.createElement('div'); node.className = 'flow-node';
+          const strong = document.createElement('b'); strong.textContent = title;
+          const small = document.createElement('small'); small.textContent = detail;
+          node.append(strong, small); return node;
+        }));
+      }
+      archTabs.forEach(tab => tab.addEventListener('click', () => showArchitecture(tab.dataset.arch)));
+      archTabs.forEach((tab, index) => tab.addEventListener('keydown', event => {
+        if (!['ArrowLeft','ArrowRight'].includes(event.key)) return;
+        event.preventDefault(); const next = archTabs[(index + (event.key === 'ArrowRight' ? 1 : -1) + archTabs.length) % archTabs.length]; next.focus(); showArchitecture(next.dataset.arch);
+      }));
+
+      // Local-first GitHub explorer: featured repositories render without any network call.
+      const repoGrid = document.getElementById('repoGrid');
+      const repoSearch = document.getElementById('repoSearch');
+      const repoFilters = [...document.querySelectorAll('[data-repofilter]')];
+      const githubStatus = document.getElementById('githubStatus');
+      const repoResults = document.getElementById('repoResults');
+      const repoMore = document.getElementById('repoMore');
+      const number = value => new Intl.NumberFormat().format(Number(value) || 0);
+      // The server-rendered cards are the single source of truth for the offline catalogue.
+      const CURATED_REPOSITORIES = [...repoGrid.querySelectorAll('.repo-card')].map(card => {
+        const link = card.querySelector('h3 a');
+        const languageNode = card.querySelector('.repo-meta span');
+        const languageText = languageNode ? languageNode.textContent.trim() : '';
+        return {
+          name: link ? link.textContent.trim() : '',
+          html_url: link ? link.href : '',
+          description: card.querySelector('p')?.textContent.trim() || '',
+          language: languageText === 'Technical writing' ? null : (languageText || null),
+          featured: true,
+          stargazers_count: null,
+          updated_at: null,
+          pushed_at: null,
+          archived: false,
+          topics: []
+        };
+      }).filter(repo => repo.name && repo.html_url);
+      let repositories = [...CURATED_REPOSITORIES];
+      let activeRepoFilter = 'all';
+      let showAllRepositories = false;
+      const repoCategory = repo => {
+        const language = String(repo.language || '').toLowerCase();
+        if (language === 'python') return 'python';
+        if (language === 'javascript' || language === 'typescript') return 'javascript';
+        return 'other';
+      };
+      const dateLabel = value => {
+        if (!value) return '';
+        const date = new Date(value);
+        return Number.isNaN(date.getTime()) ? '' : `Updated ${date.toLocaleDateString(undefined, { year: 'numeric', month: 'short' })}`;
+      };
+      function setRepositoryStats(liveRepositories = null) {
+        document.getElementById('ghFeatured').textContent = number(CURATED_REPOSITORIES.length);
+        if (!Array.isArray(liveRepositories)) {
+          ['ghRepos', 'ghStars', 'ghLanguages'].forEach(id => { document.getElementById(id).textContent = '—'; });
+          return;
+        }
+        document.getElementById('ghRepos').textContent = number(liveRepositories.length);
+        document.getElementById('ghStars').textContent = number(liveRepositories.reduce((sum, repo) => sum + (Number(repo.stargazers_count) || 0), 0));
+        document.getElementById('ghLanguages').textContent = number(new Set(liveRepositories.map(repo => repo.language).filter(Boolean)).size);
+      }
+      function makeRepositoryCard(repo) {
+        const card = document.createElement('article');
+        card.className = 'repo-card';
+        const kicker = document.createElement('div');
+        kicker.className = 'repo-kicker';
+        kicker.textContent = repo.archived ? 'Archived repository' : (repo.featured ? 'Featured public project' : 'Public repository');
+        const title = document.createElement('h3');
+        const titleLink = document.createElement('a');
+        titleLink.href = repo.html_url;
+        titleLink.target = '_blank';
+        titleLink.rel = 'noopener noreferrer';
+        titleLink.textContent = repo.name;
+        title.append(titleLink);
+        const description = document.createElement('p');
+        description.textContent = repo.description || 'No description has been added to this repository yet.';
+        const meta = document.createElement('div');
+        meta.className = 'repo-meta';
+        const language = document.createElement('span');
+        language.textContent = repo.language || 'Language not specified';
+        meta.append(language);
+        if (Number.isFinite(repo.stargazers_count)) {
+          const stars = document.createElement('span');
+          stars.textContent = `★ ${number(repo.stargazers_count)}`;
+          meta.append(stars);
+        }
+        const updatedText = dateLabel(repo.pushed_at || repo.updated_at);
+        if (updatedText) {
+          const updated = document.createElement('span');
+          updated.textContent = updatedText;
+          meta.append(updated);
+        }
+        const open = document.createElement('a');
+        open.className = 'repo-open';
+        open.href = repo.html_url;
+        open.target = '_blank';
+        open.rel = 'noopener noreferrer';
+        open.textContent = 'Open repository ↗';
+        card.append(kicker, title, description, meta, open);
+        return card;
+      }
+      function renderRepositories() {
+        const query = repoSearch.value.trim().toLowerCase();
+        const filtered = repositories.filter(repo => {
+          const languageMatch = activeRepoFilter === 'all' || repoCategory(repo) === activeRepoFilter;
+          const searchable = [repo.name, repo.description, repo.language, ...(repo.topics || [])].filter(Boolean).join(' ').toLowerCase();
+          return languageMatch && (!query || searchable.includes(query));
+        });
+        const pageSize = 9;
+        const visible = showAllRepositories ? filtered : filtered.slice(0, pageSize);
+        if (!visible.length) {
+          const empty = document.createElement('div');
+          empty.className = 'repo-empty';
+          empty.textContent = 'No repositories match the current search or filter. Try a broader term or browse the full GitHub profile.';
+          repoGrid.replaceChildren(empty);
+        } else {
+          repoGrid.replaceChildren(...visible.map(makeRepositoryCard));
+        }
+        repoResults.textContent = filtered.length
+          ? `Showing ${visible.length} of ${filtered.length} matching ${filtered.length === 1 ? 'repository' : 'repositories'}.`
+          : 'No matching repositories.';
+        repoMore.hidden = filtered.length <= pageSize;
+        repoMore.textContent = showAllRepositories ? 'Show fewer repositories' : `Show all ${filtered.length} repositories`;
+      }
+      repoSearch.addEventListener('input', () => { showAllRepositories = false; renderRepositories(); });
+      repoFilters.forEach(button => button.addEventListener('click', () => {
+        activeRepoFilter = button.dataset.repofilter;
+        showAllRepositories = false;
+        repoFilters.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        renderRepositories();
+      }));
+      repoMore.addEventListener('click', () => { showAllRepositories = !showAllRepositories; renderRepositories(); });
+
+      // Render the bundled catalogue immediately; the API is an optional metadata enhancement.
+      renderRepositories();
+      setRepositoryStats();
+      async function loadGitHub() {
+        const controller = new AbortController();
+        const timeoutId = window.setTimeout(() => controller.abort(), 9000);
+        try {
+          const response = await fetch('https://api.github.com/users/jaudat150/repos?per_page=100&type=owner&sort=updated', {
+            headers: {
+              'Accept': 'application/vnd.github+json',
+              'X-GitHub-Api-Version': '2022-11-28'
+            },
+            signal: controller.signal
+          });
+          if (!response.ok) throw new Error(`GitHub API returned ${response.status}`);
+          const data = await response.json();
+          if (!Array.isArray(data)) throw new Error('Unexpected response from GitHub');
+          const liveRepositories = data.filter(repo => repo && repo.name && !repo.fork).map(repo => ({
+            ...repo,
+            featured: false,
+            html_url: repo.html_url || `https://github.com/jaudat150/${encodeURIComponent(repo.name)}`,
+            topics: Array.isArray(repo.topics) ? repo.topics : []
+          }));
+          const byName = new Map(CURATED_REPOSITORIES.map(repo => [repo.name.toLowerCase(), { ...repo }]));
+          liveRepositories.forEach(repo => {
+            const key = repo.name.toLowerCase();
+            const curated = byName.get(key);
+            byName.set(key, curated ? { ...curated, ...repo, description: repo.description || curated.description, language: repo.language || curated.language, topics: repo.topics && repo.topics.length ? repo.topics : curated.topics, featured: true } : repo);
+          });
+          repositories = [...byName.values()].sort((a, b) => {
+            if (Boolean(a.featured) !== Boolean(b.featured)) return a.featured ? -1 : 1;
+            return new Date(b.pushed_at || b.updated_at || 0) - new Date(a.pushed_at || a.updated_at || 0);
+          });
+          document.getElementById('githubStatus').textContent = `Live GitHub metadata · refreshed ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+          setRepositoryStats(liveRepositories);
+          renderRepositories();
+        } catch (error) {
+          // Do not clear the local catalogue: search and filters continue to work offline.
+          const timedOut = error && error.name === 'AbortError';
+          githubStatus.textContent = timedOut
+            ? 'Live refresh timed out · featured catalogue remains available'
+            : 'GitHub is unavailable · showing the bundled repository catalogue';
+          setRepositoryStats();
+        } finally {
+          window.clearTimeout(timeoutId);
+        }
+      }
+      loadGitHub();
+    })();
+  </script>
+</body>
+</html>
