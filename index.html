@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="dark light">
-  <title>Jawdat Faisal Al-Hussein — Software Engineer | Backend, Data & ML</title>
-  <meta name="description" content="Portfolio of Jawdat Faisal Al-Hussein: backend engineering, data systems, machine learning, reproducible research, and full-stack software." />
+  <title>Jawdat Faisal Al-Hussein — Computer Engineer | Software, AI, Data & Embedded Systems</title>
+  <meta name="description" content="Portfolio of Jawdat Faisal Al-Hussein, Computer Engineer working across software engineering, AI, data systems, low-level programming, and embedded-systems foundations." />
   <meta name="author" content="Jawdat Faisal Al-Hussein">
   <link rel="canonical" href="https://jaudat150.github.io/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Jawdat Faisal Al-Hussein — Software Engineer">
-  <meta property="og:description" content="I design, build, test, and ship software systems — from data pipelines and APIs to machine-learning experiments.">
+  <meta property="og:title" content="Jawdat Faisal Al-Hussein — Computer Engineer">
+  <meta property="og:description" content="Software engineering, AI, data systems, low-level programming, and hardware-software integration.">
   <meta property="og:url" content="https://jaudat150.github.io/">
   <meta name="twitter:card" content="summary">
   <meta name="theme-color" content="#0b1015">
@@ -20,7 +20,7 @@
     "@context":"https://schema.org",
     "@type":"Person",
     "name":"Jawdat Faisal Al-Hussein",
-    "jobTitle":"Software Engineer — Backend, Data & Machine Learning",
+    "jobTitle":"Computer Engineer — Software, AI, Data & Embedded Systems",
     "email":"jaudatalhusein@gmail.com",
     "url":"https://jaudat150.github.io/",
     "alumniOf":{"@type":"CollegeOrUniversity","name":"Antioch Private University"},
@@ -78,6 +78,9 @@
     :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
     .progress { position: fixed; inset: 0 auto auto 0; height: 3px; width: 0; background: linear-gradient(90deg,var(--accent),var(--accent-2)); z-index: 100; }
     .wrap { width: min(var(--max), calc(100% - 44px)); margin-inline: auto; }
+    img, svg, video, canvas { max-width: 100%; }
+    .project, .subproject, .skill-group, .lab-panel, .repo-card { min-width: 0; }
+    p, li, h1, h2, h3 { overflow-wrap: break-word; }
     .skip { position: absolute; left: -9999px; top: 8px; z-index: 999; background: var(--accent); color: var(--accent-ink); padding: 10px 14px; border-radius: 9px; }
     .skip:focus { left: 12px; }
     .topbar { position: sticky; top: 0; z-index: 80; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(18px); }
@@ -168,6 +171,7 @@
     .arch-node strong { font-weight: 650; }.arch-node span { color: var(--faint); font: 9px var(--mono); }
     .arch-node.active { border-color: color-mix(in srgb,var(--accent) 50%,var(--line)); }
     .split-card { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 15px; }
+    .systems-highlight { grid-template-columns: 1fr; }
     .subproject { padding: 21px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
     .subproject h3 { font-size: 18px; margin: 0 0 8px; letter-spacing: -.03em; }
     .subproject p { color: var(--muted); font-size: 13px; margin: 0; }
@@ -258,11 +262,20 @@
     }
     @media (max-width: 700px) {
       .wrap { width: min(var(--max), calc(100% - 30px)); }.nav { height: 64px; }.navlinks { display: none; position: absolute; top: 64px; left: 0; right: 0; padding: 15px 18px 18px; background: var(--panel); border-bottom: 1px solid var(--line); flex-direction: column; align-items: stretch; gap: 0; }
-      .navlinks.open { display: flex; }.navlinks a { padding: 11px 4px; font-size: 13px; }.menu-btn { display: grid; }.hero { padding: 58px 0 46px; }h1 { font-size: clamp(40px,12vw,59px); }.hero-grid { gap: 35px; }.workbench { max-width: 100%; }.proof { margin-top: 30px; gap: 7px; }.proof-item { padding: 14px; }.proof-item span { font-size: 10px; }
-      section { padding: 64px 0; }.section-head { display: block; }.feature-grid { grid-template-columns: 1fr; }.project.featured { grid-column: auto; }.project.featured .project-layout { grid-template-columns: 1fr; }.project.featured .project h3 { font-size: 25px; }.architecture-mini { max-width: 480px; }.split-card { grid-template-columns: 1fr; }.lab-layout { grid-template-columns: 1fr; }.lab-menu { grid-template-columns: repeat(3,1fr); }.lab-tab { padding: 10px; }.lab-tab b { font-size: 10px; }.lab-tab small { font-size: 9px; }.lab-panel { min-height: 0; padding: 18px; }.principles { grid-template-columns: 1fr 1fr; }.skills-grid { grid-template-columns: 1fr; }.cert-grid { grid-template-columns: 1fr 1fr; }
+      .navlinks.open { display: flex; }.navlinks a { padding: 11px 4px; font-size: 13px; }.menu-btn { display: grid; }.icon-btn, .menu-btn { width: 44px; height: 44px; }.hero { padding: 58px 0 46px; }h1 { font-size: clamp(40px,12vw,59px); }.hero-grid { gap: 35px; }.workbench { max-width: 100%; }.proof { margin-top: 30px; gap: 7px; }.proof-item { padding: 14px; }.proof-item span { font-size: 10px; }
+      section { padding: 64px 0; }.section-head { display: block; }.feature-grid { grid-template-columns: 1fr; }.project.featured { grid-column: auto; }.project.featured .project-layout { grid-template-columns: 1fr; }.project.featured .project h3 { font-size: 25px; }.architecture-mini { max-width: 480px; }.split-card { grid-template-columns: 1fr; }.lab-layout { grid-template-columns: 1fr; }.lab-menu { grid-template-columns: repeat(2,minmax(0,1fr)); }.lab-tab { padding: 10px; min-width: 0; }.lab-tab b { font-size: 10px; }.lab-tab small { font-size: 9px; }.lab-panel { min-height: 0; padding: 18px; }.principles { grid-template-columns: 1fr 1fr; }.skills-grid { grid-template-columns: 1fr; }.cert-grid { grid-template-columns: 1fr 1fr; }
     }
     @media (max-width: 480px) {
-      .brand { font-size: 12px; }.brand-mark { width: 31px; height: 31px; }.nav-actions { margin-left: auto; }.hero-actions .btn { flex: 1 1 135px; }.pipeline-steps { grid-template-columns: repeat(2,1fr); }.proof-item b { font-size: 22px; }.flow { grid-template-columns: repeat(2,1fr); }.flow-node:nth-child(2)::after { display: none; }.repo-grid { grid-template-columns: 1fr; }.principles { grid-template-columns: 1fr; }.lab-menu { grid-template-columns: 1fr; }.lab-tab { text-align: left; }.cert-grid { grid-template-columns: 1fr; }.contact-links .btn { flex: 1 1 100%; }.github-status { width: 100%; margin: 4px 0 0; }
+      .wrap { width: min(var(--max), calc(100% - 28px)); }
+      .brand { font-size: 12px; }.brand-mark { width: 31px; height: 31px; }.nav-actions { margin-left: auto; }.hero-actions .btn { flex: 1 1 135px; }.pipeline-steps { grid-template-columns: repeat(2,minmax(0,1fr)); }.proof-item b { font-size: 22px; }.flow { grid-template-columns: repeat(2,minmax(0,1fr)); }.flow-node:nth-child(2)::after { display: none; }.repo-grid { grid-template-columns: 1fr; }.principles { grid-template-columns: 1fr; }.lab-menu { grid-template-columns: 1fr; }.lab-tab { text-align: left; }.cert-grid { grid-template-columns: 1fr; }.contact-links .btn { flex: 1 1 100%; }.github-status { width: 100%; margin: 4px 0 0; }
+      .hero { padding-top: 46px; }.eyebrow { font-size: 9px; letter-spacing: .09em; }.intro { font-size: 15px; }.microline { gap: 9px 13px; font-size: 9px; }.workbench { border-radius: 15px; }.wb-content { padding: 16px; }.code-line { font-size: 10px; gap: 9px; }.proof { grid-template-columns: repeat(2,minmax(0,1fr)); }.proof-item { min-width: 0; }.repo-tools { align-items: stretch; }.repo-search { flex-basis: 100%; }.repo-filters { width: 100%; }.filter { flex: 1 1 auto; }
+      .modal-body { padding: 17px; }.modal-body h2 { font-size: 22px; }.modal-head { padding: 14px 16px; }
+    }
+    @media (max-width: 350px) {
+      .nav { gap: 8px; }.brand { font-size: 11px; gap: 7px; }.brand-mark { width: 29px; height: 29px; }.icon-btn, .menu-btn { width: 42px; height: 42px; }.hero-actions .btn { flex-basis: 100%; }.proof { grid-template-columns: 1fr 1fr; }.pipeline-title { font-size: 9px; }
+    }
+    @media (max-height: 500px) and (orientation: landscape) {
+      .hero { padding-top: 34px; }.navlinks { max-height: min(70vh,360px); overflow-y: auto; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; } }
     @media print { .topbar,.progress,.hero-actions,.repo-tools,.text-link,.contact-links,dialog { display: none !important; } body { background: white; color: black; } section { break-inside: avoid; }.project,.principle,.skill-group,.cert,.proof-item { background: white; border-color: #ccc; color: black; box-shadow: none; } }
@@ -289,9 +302,9 @@
       <section class="hero" style="border:0;padding-left:0;padding-right:0">
         <div class="hero-grid">
           <div>
-            <div class="eyebrow"><span class="pulse"></span> Software Engineer · Backend, Data & Machine Learning</div>
-            <h1>I build software systems that are <span class="gradient">measurable, testable, and useful.</span></h1>
-            <p class="intro">I’m <strong>Jawdat Faisal Al-Hussein</strong>, a computer engineering graduate focused on backend development, data engineering, and applied machine learning. My work spans the full delivery cycle—from modelling data and defining application boundaries to implementing services, validating behaviour, evaluating results, and documenting systems for the people who use and maintain them.</p>
+            <div class="eyebrow"><span class="pulse"></span> Computer Engineer · Software · AI · Data · Embedded Systems</div>
+            <h1>I build <span class="gradient">software, AI & embedded systems.</span></h1>
+            <p class="intro">I’m <strong>Jawdat Faisal Al-Hussein</strong>, a Computer Engineering graduate working across software engineering, AI, data, and embedded-systems foundations. I build backend applications and data platforms, develop and evaluate machine-learning systems, and explore the software–hardware boundary through low-level programming and Arduino-based project work. I approach each system end to end: architecture, implementation, verification, measurement, and technical documentation.</p>
             <div class="hero-actions">
               <a class="btn primary" href="#work">Explore selected work <span aria-hidden="true">↘</span></a>
               <a class="btn" href="Jawdat-Faisal-Al-Hussein-CV.pdf" download>Download CV <span aria-hidden="true">↓</span></a>
@@ -403,11 +416,20 @@
             <div class="project-links"><a class="text-link" href="https://github.com/jaudat150/Django-Plotter-Pro" target="_blank" rel="noopener noreferrer">Repository ↗</a></div>
           </article>
         </div>
+        <div class="split-card systems-highlight">
+          <article class="subproject">
+            <div class="project-type">Low-level software · Hardware–software foundations</div>
+            <h3>Native Extensions & Embedded Project Work</h3>
+            <p>Explored the boundary between Python and compiled code through a minimal CPython extension built with the C API and setuptools. Separately documented an Arduino calculator project with source code, providing a practical introduction to hardware–software interaction. These projects demonstrate foundational systems experience rather than a claim of production embedded-hardware specialisation.</p>
+            <div class="tags"><span class="tag">C</span><span class="tag">CPython API</span><span class="tag">Arduino</span><span class="tag">Native modules</span><span class="tag">Hardware–software integration</span></div>
+            <div class="project-links"><a class="text-link" href="https://github.com/jaudat150/improved_python_with_C" target="_blank" rel="noopener noreferrer">CPython extension ↗</a><a class="text-link" href="https://github.com/jaudat150/Report-Papers" target="_blank" rel="noopener noreferrer">Arduino project notes ↗</a></div>
+          </article>
+        </div>
       </section>
 
       <section id="engineering">
         <div class="section-head">
-          <div><div class="kicker">02 / Engineering depth</div><h2 class="section-title">I focus on the engineering between components.</h2><p class="section-copy">Select a system to explore its architecture. Each view focuses on the interfaces between components—the data transformations, validation points, and design trade-offs that determine whether the complete system is maintainable and dependable.</p></div>
+          <div><div class="kicker">02 / Engineering depth</div><h2 class="section-title">I focus on the engineering between components.</h2><p class="section-copy">Explore how different parts of a system fit together—from distributed learning and data pipelines to application architecture and the boundary between software and hardware. Each view highlights interfaces, transformations, validation points, and design trade-offs.</p></div>
           <div class="section-aside">ARCHITECTURE EXPLORER · INTERACTIVE</div>
         </div>
         <div class="lab-layout">
@@ -415,6 +437,7 @@
             <button class="lab-tab" role="tab" id="tabTraffic" aria-selected="true" aria-controls="architecturePanel" data-arch="traffic"><b>01 · Multi-agent RL</b><small>Simulation → policy → evidence</small></button>
             <button class="lab-tab" role="tab" id="tabData" aria-selected="false" aria-controls="architecturePanel" data-arch="data"><b>02 · Data warehouse</b><small>Sources → model → analytics</small></button>
             <button class="lab-tab" role="tab" id="tabWeb" aria-selected="false" aria-controls="architecturePanel" data-arch="web"><b>03 · Web application</b><small>Request → domain → persistence</small></button>
+            <button class="lab-tab" role="tab" id="tabSystems" aria-selected="false" aria-controls="architecturePanel" data-arch="systems"><b>04 · Low-level & embedded</b><small>Application → native code → device</small></button>
           </div>
           <div class="lab-panel" id="architecturePanel" role="tabpanel" aria-labelledby="tabTraffic" tabindex="0">
             <h3 id="archTitle">A controlled learning and evaluation loop</h3>
@@ -527,7 +550,7 @@
 
       <section id="about">
         <div class="section-head">
-          <div><div class="kicker">04 / Background</div><h2 class="section-title">Software engineering, research, and teaching.</h2><p class="section-copy">My experience combines software delivery, programming instruction, and operational coordination. Teaching strengthened my ability to explain complex concepts clearly; freelance and project work has required translating requirements into working applications, data workflows, and maintainable implementations.</p></div>
+          <div><div class="kicker">04 / Background</div><h2 class="section-title">Computer engineering, software delivery, and research.</h2><p class="section-copy">My experience combines software development, data and AI projects, programming instruction, and operational coordination. Teaching strengthened my ability to explain technical concepts clearly, while freelance and academic work has required translating requirements into maintainable applications, repeatable data workflows, and evaluated systems.</p></div>
         </div>
         <div class="experience">
           <div class="education-card"><span class="degree">Education · Completed 2026</span><h3>B.Sc. Computer Engineering</h3><p>Antioch Private University, Rural Damascus, Syria.<br><br>Graduated 10 August 2026.</p></div>
@@ -548,9 +571,10 @@
           <article class="skill-group"><h3><span class="skill-icon">DE</span> Data engineering & analytics</h3><p>SQL · pandas · ETL design · schema reconciliation · data normalisation · deduplication · star schemas · Streamlit · Plotly · CSV workflows</p></article>
           <article class="skill-group"><h3><span class="skill-icon">ML</span> Machine learning & optimisation</h3><p>PyTorch · TensorFlow · scikit-learn · NumPy · Gymnasium · PettingZoo · SUMO / TraCI · CUDA · genetic algorithms · reinforcement learning</p></article>
           <article class="skill-group"><h3><span class="skill-icon">SE</span> Software engineering practice</h3><p>Data structures & algorithms · object-oriented design · dependency injection · modular architecture · Git · GitHub Actions · Docker · Linux · pytest · structured logging · technical documentation</p></article>
-          <article class="skill-group"><h3><span class="skill-icon">CS</span> Systems & security foundations</h3><p>C · C++ · Java · Bash · PowerShell · Windows internals · network and application security fundamentals · defensive system inspection · hashing</p></article>
+          <article class="skill-group"><h3><span class="skill-icon">SYS</span> Systems, low-level & embedded foundations</h3><p>C · C++ · CPython C API · native Python extensions · Arduino project work · hardware–software integration concepts · Linux and Windows system fundamentals</p></article>
           <article class="skill-group"><h3><span class="skill-icon">RS</span> Research & measurement</h3><p>Experimental design · paired comparisons · hypothesis testing · confidence intervals · multiple-comparison correction · reproducible workflows · data provenance</p></article>
         </div>
+        <p class="muted-note" style="margin-top:15px">Embedded-systems experience is represented through documented Arduino project work and low-level C integration, alongside broader computer-systems foundations.</p>
         <div class="kicker" style="margin-top:30px">Selected certifications</div>
         <div class="cert-grid">
           <div class="cert"><b>Deep Learning Specialization</b><span>DeepLearning.AI · neural networks, optimisation, CNNs, ML project structure</span></div>
@@ -627,7 +651,7 @@
         menuButton.textContent = open ? '✕' : '☰';
       });
       navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
-        navLinks.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.textContent = '☰';
+        navLinks.classList.remove('open'); menuButton.setAttribute('aria-expanded', 'false'); menuButton.setAttribute('aria-label', 'Open navigation menu'); menuButton.textContent = '☰';
       }));
 
       // Scroll progress and active section indicator.
@@ -675,6 +699,12 @@
           description: 'A maintainable Django application separates request handling, domain rules, and persistence. Authentication and role boundaries are part of the application model, not visual decoration.',
           nodes: [['HTTP request','validation'],['Django views','application flow'],['Domain logic','business rules'],['Database','persist state']],
           note: 'Design point: keep business rules testable outside templates, validate input at boundaries, and enforce staff/admin permissions on the server side.'
+        },
+        systems: {
+          title: 'Understand the boundary between high-level and native code',
+          description: 'A small CPython extension demonstrates how a Python application can call compiled C code through the CPython API and package it as an importable native module. Alongside this low-level software work, the portfolio includes a documented Arduino calculator project as introductory hardware–software integration work.',
+          nodes: [['Python application','high-level interface'],['CPython API','language boundary'],['Compiled C module','native implementation'],['Arduino project','hardware-facing work']],
+          note: 'Engineering focus: understand interfaces, data representation, build tooling, and the constraints introduced when software interacts with native code or physical devices. The Arduino work is presented as project-level exposure, not production embedded-systems experience.'
         }
       };
       const archTabs = [...document.querySelectorAll('[data-arch]')];
